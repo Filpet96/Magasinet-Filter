@@ -9,6 +9,11 @@ require template_path('includes/plugins/plate.php');
 // Register post types
 require get_template_directory().'/post-types/article.php';
 
+require get_template_directory().'/taxonomies/tag.php';
+
+
+// Get api endpoints
+require get_template_directory().'/api-endpoint.php';
 
 // Set theme defaults.
 add_action('after_setup_theme', function () {
