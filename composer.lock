@@ -1,23 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "a6a856352d9692130652ce0d7c3008b1",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -124,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -195,16 +195,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.7.2",
+            "version": "v5.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "fd5d68eddfe49647f8354ac4c5f09cb88ccece7a"
+                "reference": "2daf3c078610f744e2a4dc2f44fb5060cce9835b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/fd5d68eddfe49647f8354ac4c5f09cb88ccece7a",
-                "reference": "fd5d68eddfe49647f8354ac4c5f09cb88ccece7a",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/2daf3c078610f744e2a4dc2f44fb5060cce9835b",
+                "reference": "2daf3c078610f744e2a4dc2f44fb5060cce9835b",
                 "shasum": ""
             },
             "require": {
@@ -235,20 +235,20 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2018-09-05T21:56:43+00:00"
+            "time": "2018-09-18T12:50:05+00:00"
         },
         {
             "name": "illuminate/support",
-            "version": "v5.7.2",
+            "version": "v5.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "3dabc8fe2eebf614ba133fa34a4c160119ec7241"
+                "reference": "f7c68e8c8aab200cc8ad84f974d5511cda58a742"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/3dabc8fe2eebf614ba133fa34a4c160119ec7241",
-                "reference": "3dabc8fe2eebf614ba133fa34a4c160119ec7241",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/f7c68e8c8aab200cc8ad84f974d5511cda58a742",
+                "reference": "f7c68e8c8aab200cc8ad84f974d5511cda58a742",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +294,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2018-09-06T13:40:39+00:00"
+            "time": "2018-09-19T18:36:57+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -426,16 +426,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.33.0",
+            "version": "1.34.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "55667c1007a99e82030874b1bb14d24d07108413"
+                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/55667c1007a99e82030874b1bb14d24d07108413",
-                "reference": "55667c1007a99e82030874b1bb14d24d07108413",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
+                "reference": "1dbd3cb01c5645f3e7deda7aa46ef780d95fcc33",
                 "shasum": ""
             },
             "require": {
@@ -477,7 +477,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-08-07T08:39:47+00:00"
+            "time": "2018-09-20T19:36:25+00:00"
         },
         {
             "name": "psr/container",
@@ -1074,37 +1074,37 @@
         },
         {
             "name": "wordplate/framework",
-            "version": "6.3.0",
+            "version": "6.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wordplate/framework.git",
-                "reference": "599985b2f885c0b23bd3c14bb3c50b82a53b7171"
+                "reference": "2d326233ee6ee5374aa90cdf3ae075a6fd038688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wordplate/framework/zipball/599985b2f885c0b23bd3c14bb3c50b82a53b7171",
-                "reference": "599985b2f885c0b23bd3c14bb3c50b82a53b7171",
+                "url": "https://api.github.com/repos/wordplate/framework/zipball/2d326233ee6ee5374aa90cdf3ae075a6fd038688",
+                "reference": "2d326233ee6ee5374aa90cdf3ae075a6fd038688",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.5",
+                "composer/installers": "^1.6",
                 "ext-mbstring": "*",
-                "illuminate/support": "^5.6",
-                "johnpbloch/wordpress": "^4.9.6",
+                "illuminate/support": "^5.7",
+                "johnpbloch/wordpress": "^4.9.8",
                 "php": "^7.1.3",
                 "roots/wp-password-bcrypt": "^1.0",
                 "symfony/http-foundation": "^4.1",
                 "symfony/routing": "^4.1",
                 "symfony/var-dumper": "^4.1",
-                "vlucas/phpdotenv": "^2.4"
+                "vlucas/phpdotenv": "^2.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.1"
+                "phpunit/phpunit": "^7.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.3-dev"
+                    "dev-master": "6.4-dev"
                 }
             },
             "autoload": {
@@ -1138,7 +1138,7 @@
                 "wordplate",
                 "wordpress"
             ],
-            "time": "2018-06-04T13:56:35+00:00"
+            "time": "2018-09-14T15:01:06+00:00"
         },
         {
             "name": "wordplate/plate",
@@ -1190,15 +1190,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "5.7.2",
+            "version": "5.7.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/5.7.2"
+                "reference": "tags/5.7.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.7.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.7.6.zip",
                 "reference": null,
                 "shasum": null
             },

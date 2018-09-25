@@ -1,0 +1,5 @@
+@import "../../Colors.css";
+
+.App-header {
+  background-color: var(--black);
+}
