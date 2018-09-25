@@ -23,7 +23,7 @@ function getAllArticles() {
     $customFields = get_fields($article);
     $tags = get_the_terms($article, 'tag');
     foreach ($customFields as $field => $value) {
-        $article->$field = wp_strip_all_tags($value);
+        $article->$field = $value;
     }
     $article->tags = $tags;
 }
@@ -42,7 +42,7 @@ function getArticleById($data) {
       $customFields = get_fields($article);
       $tags = get_the_terms($article, 'tag');
       foreach ($customFields as $field => $value) {
-          $article->$field = wp_strip_all_tags($value);
+          $article->$field = $value;
       }
       $article->tags = $tags;
     } else {

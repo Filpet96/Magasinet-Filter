@@ -8,8 +8,11 @@ require template_path('includes/plugins/plate.php');
 
 // Register post types
 require get_template_directory().'/post-types/article.php';
+require get_template_directory().'/post-types/quiz.php';
 
+// Register Taxonomies
 require get_template_directory().'/taxonomies/tag.php';
+require get_template_directory().'/taxonomies/politician.php';
 
 
 // Get api endpoints
