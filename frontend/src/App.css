@@ -1,8 +1,16 @@
 .HomePage {
   margin: 0 16px;
-
 }
 
 .Filter-logo {
   max-height: 30px;
+}
+
+.sub_headline {
+  font-family: 'PF Cond';
+  line-height: normal;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  color: var(--salmon);
+  text-transform: uppercase;
 }

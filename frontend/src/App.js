@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import Header from './Components/Header';
-import ArticlePreview from './Components/ArticlePreview';
-
+import Header from "./Components/Header";
+import ArticlePreview from "./Components/ArticlePreview";
+import BottomMenu from "./Components/BottomMenu";
 
 class App extends Component {
   state = {
-      error: false,
-      article: false
+    error: false,
+    article: false
   };
 
   componentDidMount() {
@@ -26,29 +26,34 @@ class App extends Component {
           article: data
         });
       });
-    }
+  }
 
-    selectArticle = id => {
-      const article = this.state.article.find(article => article.id === id);
+  selectArticle = id => {
+    const article = this.state.article.find(article => article.id === id);
 
-      this.setState({
-        article
-      });
-    };
-
+    this.setState({
+      article
+    });
+  };
 
   render() {
-      const { article, error } = this.state;
+    const { article, error } = this.state;
 
     return (
+      <div>
+        <Header />
         <div className="HomePage">
-          <Header />
-            <ArticlePreview
-              headline={article.headline}
-              lead={article.lead}
-              featured_image={article.featured_image}
-            />
+          <ArticlePreview
+            headline={article.headline}
+            lead={article.lead}
+            featured_image={article.featured_image}
+          />
+          <h2 className="sub_headline">Utvalt för dig</h2>
+          <h2 className="sub_headline">Från nya numret</h2>
+          <h2 className="sub_headline">Palmemordet: Den osannolika mördaren</h2>
         </div>
+        <BottomMenu />
+      </div>
     );
   }
 }
