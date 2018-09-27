@@ -1,0 +1,26 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.read-more-button {
+  background-color: var(--salmon);
+  border-radius: 3px;
+  border: none;
+
+  font-family: 'PF Cond';
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  display: inherit;
+  align-items: center;
+}
+
+.read-more-button span {
+  padding: 5px 5px 0px 5px;
+}
+.read-more-button img {
+  vertical-align: baseline;
+}

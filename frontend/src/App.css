@@ -1,16 +1,8 @@
+.HomePage {
+  margin: 0 16px;
+
+}
+
 .Filter-logo {
   max-height: 30px;
-}
-
-.App-header {
-  background-color: #151515;
-  height: 80px;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
 }
