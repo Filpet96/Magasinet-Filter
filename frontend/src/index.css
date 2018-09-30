@@ -1,8 +1,7 @@
-@import '~sanitize.css';
+@import "~sanitize.css";
 
 @import "./Colors.css";
 @import "./Fonts/fonts.css";
-
 
 body {
   background-color: var(--black);

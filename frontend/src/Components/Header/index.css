@@ -1,6 +1,6 @@
 .header {
   position: sticky;
-  top:0;
+  top: 0;
   overflow: hidden;
   background-color: var(--black);
   height: 60px;
@@ -8,4 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header_filter_logo {
+  max-height: 35px;
 }

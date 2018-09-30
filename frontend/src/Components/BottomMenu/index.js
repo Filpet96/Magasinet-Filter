@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./index.css";
 
 import home_icon from "../../Icons/home.svg";

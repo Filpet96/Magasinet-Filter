@@ -1,57 +1,23 @@
 import React, { Component } from "react";
+import { Router, Link } from "@reach/router";
 import "./App.css";
 
+import Home from "./Pages/Home";
+import Article from "./Pages/Article";
 import Header from "./Components/Header";
-import ArticlePreview from "./Components/ArticlePreview";
 import BottomMenu from "./Components/BottomMenu";
 
 class App extends Component {
-  state = {
-    error: false,
-    article: false
-  };
-
-  componentDidMount() {
-    let dataURL = "http://localhost:8888/wp-json/filter/article/10";
-
-    fetch(dataURL)
-      .then(response => response.json())
-      .catch(error => {
-        this.setState({
-          error
-        });
-      })
-      .then(data => {
-        this.setState({
-          article: data
-        });
-      });
-  }
-
-  selectArticle = id => {
-    const article = this.state.article.find(article => article.id === id);
-
-    this.setState({
-      article
-    });
-  };
-
   render() {
-    const { article, error } = this.state;
+    <Router>
+      <Home path="/" />
+      <Article path="/article/:articleId" />
+    </Router>;
 
     return (
-      <div>
+      <div className="pages">
         <Header />
-        <div className="HomePage">
-          <ArticlePreview
-            headline={article.headline}
-            lead={article.lead}
-            featured_image={article.featured_image}
-          />
-          <h2 className="sub_headline">Utvalt för dig</h2>
-          <h2 className="sub_headline">Från nya numret</h2>
-          <h2 className="sub_headline">Palmemordet: Den osannolika mördaren</h2>
-        </div>
+        <Home />
         <BottomMenu />
       </div>
     );
