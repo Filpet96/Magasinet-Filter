@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "npm": "^6.4.1",
+    "@reach/router": "^1.2.1",
+    "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5",
+    "react-helmet": "^5.2.0",
+    "react-scripts": "2.0.3",
     "sanitize.css": "^7.0.3"
   },
   "scripts": {

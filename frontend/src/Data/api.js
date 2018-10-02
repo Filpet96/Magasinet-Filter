@@ -1,9 +1,9 @@
-const endPoint = "http://localhost:8888/wp-json";
+const endPoint = "http://localhost:8888/wp-json/filter";
 const wpAPI = {
-    settings: `${endPoint}/wp/v2/settings`,
-    articles: `${endPoint}/filter/articles/`,
-    article: `${endPoint}/filter/article/`,
-    acf: `${endPoint}/acf/v3/posts`,
-}
+  settings: `${endPoint}/wp/v2/settings/`,
+  articles: `${endPoint}/articles/`,
+  article: `${endPoint}/article/`,
+  category: `${endPoint}/articles/category/`
+};
 
-export default {endPoint, wpAPI}
+export default endPoint;

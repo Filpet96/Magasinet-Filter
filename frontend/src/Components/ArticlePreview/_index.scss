@@ -1,0 +1,35 @@
+.article-preview-container {
+  padding-bottom: 5%;
+}
+
+.article-preview-container h1 {
+  margin-top: -20%;
+}
+
+.article-preview-category {
+  color: $salmon;
+  font-family: "PF Text";
+  font-size: 16px;
+  line-height: normal;
+}
+
+.article-preview-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  z-index: -10;
+}
+
+.article-preview-image .overlay {
+  position: absolute;
+  background: linear-gradient(
+    180deg,
+    rgba(21, 21, 21, 0) 36.86%,
+    #151515 61.59%
+  );
+  width: 100%;
+  height: 140%;
+}

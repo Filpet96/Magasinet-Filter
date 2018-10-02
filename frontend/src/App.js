@@ -1,55 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { Router, Link } from "@reach/router";
+import "./App";
 
-import Header from './Components/Header';
-import ArticlePreview from './Components/ArticlePreview';
-
+import Home from "./Pages/Home";
+import Article from "./Pages/Article";
+import BottomMenu from "./Components/BottomMenu";
 
 class App extends Component {
-  state = {
-      error: false,
-      article: false
-  };
-
-  componentDidMount() {
-    let dataURL = "http://localhost:8888/wp-json/filter/article/10";
-
-    fetch(dataURL)
-      .then(response => response.json())
-      .catch(error => {
-        this.setState({
-          error
-        });
-      })
-      .then(data => {
-        this.setState({
-          article: data
-        });
-      });
-    }
-
-    selectArticle = id => {
-      const article = this.state.article.find(article => article.id === id);
-
-      this.setState({
-        article
-      });
-    };
-
-
   render() {
-      const { article, error } = this.state;
-
     return (
-        <div className="HomePage">
-          <Header />
-            <ArticlePreview
-              headline={article.headline}
-              lead={article.lead}
-              featured_image={article.featured_image}
-            />
-        </div>
+      <div className="app">
+        <main>
+          <Router>
+            <Home path="/" />
+            <Article path="/Article" />
+          </Router>
+        </main>
+        <BottomMenu />
+      </div>
     );
   }
 }
+
 export default App;
