@@ -7,7 +7,7 @@ add_action('init', function () {
             'add_new_item' => __('Add New Politician'),
             'edit_item' => __('Edit Politician'),
             'name' => __('Politicians'),
-            'search_items' => __('Search Politicians'),
+            'search_items' => __('Search Politician'),
             'singular_name' => __('Politician'),
         ],
         'query_var' => true,
