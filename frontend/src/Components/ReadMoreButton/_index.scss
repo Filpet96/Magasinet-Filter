@@ -4,11 +4,11 @@
 }
 
 .read-more-button {
-  background-color: var(--salmon);
+  background-color: $salmon;
   border-radius: 3px;
   border: none;
 
-  font-family: 'PF Cond';
+  font-family: "PF Cond";
   font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;

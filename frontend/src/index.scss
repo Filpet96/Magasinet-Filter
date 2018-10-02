@@ -1,0 +1,11 @@
+body {
+  background-color: var(--black);
+  color: #fff;
+  display: flex;
+}
+@import "~sanitize.css";
+@import "App";
+@import "./Fonts/fonts";
+@import "Colors";
+@import "./Pages/_pagesScssAll.scss";
+@import "./Components/_componentsScssAll.scss";

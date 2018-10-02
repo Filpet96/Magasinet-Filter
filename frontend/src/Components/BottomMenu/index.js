@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./index";
 
 import home_icon from "../../Icons/home.svg";
 import menu_icon from "../../Icons/menu.svg";

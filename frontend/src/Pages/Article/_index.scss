@@ -1,0 +1,16 @@
+.articleContainer {
+  background-color: $white;
+
+  h1,
+  p,
+  i {
+    color: $black;
+  }
+}
+
+p {
+}
+
+.articleContainer h1 {
+  font-size: 45px;
+}

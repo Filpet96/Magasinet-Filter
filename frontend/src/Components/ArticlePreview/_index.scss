@@ -1,5 +1,3 @@
-@import "../../Colors.css";
-
 .article-preview-container {
   padding-bottom: 5%;
 }
@@ -9,7 +7,7 @@
 }
 
 .article-preview-category {
-  color: var(--salmon);
+  color: $salmon;
   font-family: "PF Text";
   font-size: 16px;
   line-height: normal;

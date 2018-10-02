@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./index.css";
+import "./index";
 import ReadMoreButton from "../ReadMoreButton";
+import { Router, Link } from "@reach/router";
 
 class ArticlePreview extends Component {
   render() {
@@ -9,7 +10,7 @@ class ArticlePreview extends Component {
     return (
       <div className="article-preview-container">
         <div className="article-preview-image">
-          <div className="overlay"></div>
+          <div className="overlay" />
           <img src={featured_image} alt={post_title} />
         </div>
         <div>
@@ -17,7 +18,9 @@ class ArticlePreview extends Component {
         </div>
         <p className="article-preview-category">Reportage • 19 min lästid</p>
         <p dangerouslySetInnerHTML={{ __html: lead }} />
-        <ReadMoreButton />
+        <Link to="Article">
+          <ReadMoreButton />
+        </Link>
       </div>
     );
   }

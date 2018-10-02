@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 
 import endPoint from "../../Data/api";
+
+import { Router, Link } from "@reach/router";
+import Helmet from "react-helmet";
+
 import ArticlePreview from "../../Components/ArticlePreview";
+import Header from "../../Components/Header";
+
+import "./index";
 
 class Home extends Component {
   state = {
@@ -29,7 +36,11 @@ class Home extends Component {
 
     return (
       <div>
-        <div className="Home">
+        <Header />
+        <Helmet>
+          <title>Filter - start</title>
+        </Helmet>
+        <div>
           <ArticlePreview
             headline={article.headline}
             lead={article.lead}
