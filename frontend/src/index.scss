@@ -1,11 +1,6 @@
-body {
-  background-color: var(--black);
-  color: #fff;
-  display: flex;
-}
 @import "~sanitize.css";
-@import "App";
-@import "./Fonts/fonts";
 @import "Colors";
+@import "./Fonts/fonts";
+@import "App";
 @import "./Pages/_pagesScssAll.scss";
 @import "./Components/_componentsScssAll.scss";

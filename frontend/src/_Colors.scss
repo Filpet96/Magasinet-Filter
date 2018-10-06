@@ -2,3 +2,26 @@ $black: #151515;
 $white: #fbfbfb;
 $grey: #ddd;
 $salmon: #e1ab99;
+$dark-salmon: #707070;
+$yellow: #FFDB5E;
+
+
+.text-dark {
+  color: $black !important;
+}
+
+.text-salmon {
+  color: $salmon !important;
+}
+
+.text-dark-salmon {
+  color: $dark-salmon !important;
+}
+
+.text-light {
+  color: $white !important;
+}
+
+.text-grey {
+  color: $grey !important;
+}

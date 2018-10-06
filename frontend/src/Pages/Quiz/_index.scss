@@ -1,0 +1,162 @@
+body {
+	background-color: $white;
+}
+
+.bottom_menu_bar {
+	display: none;
+}
+
+.quizContainer {
+	padding-left: 16px;
+	padding-right: 16px;
+
+	p {
+		font-size: 11px;
+	}
+
+	span {
+		font-size: 11px;
+		font-weight: normal;
+		font-style: normal;
+		margin-left: 3px;
+	}
+
+	.featured_image {
+		width: calc(100% + 32px);
+		margin-left: -16px;
+	}
+
+	.bill-bull-quiz {
+		margin-top: 50px;
+		width: calc(100% + 32px);
+		margin-left: -16px;
+		height: 100%;
+		background-color: $yellow;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-right: 16px;
+		padding-left: 16px;
+
+		h1 {
+			font-family: 'PF Cond';
+			font-size: 35px;
+			margin-bottom: 0;
+		}
+
+		h3 {
+			width: 90%;
+			font-size: 19px;
+			margin-top: 15px;
+			font-weight: normal;
+			font-family: 'Harriet Text';
+		}
+
+		p {
+			font-size: 19px;
+			font-family: 'Harriet Text';
+		}
+
+		.quiz-container {
+			background-color: $white;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 5px;
+
+			.quiz-bubble {
+				background-color: #F2F2F2;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+				border-radius: 500px;
+				width: 95%;
+				margin-top: 15%;
+				position: relative;
+
+				p {
+					width: 80%;
+					margin-top: 0;
+					text-align: center;
+					margin-top: 35px;
+					margin-bottom: 35px;
+					hyphens: auto;
+				}
+
+				.bubble-triangle {
+					position: absolute;
+					bottom: -35px;
+					width: 0;
+					height: 0;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					border-top: 35px solid #F2F2F2;
+					font-size: 0;
+					line-height: 0;
+				}
+			}
+
+			.politician-icon-container {
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
+			}
+
+			.politician-icon {
+				width: 100px;
+				height: 100px;
+				border-radius: 50px;
+				margin: 75px 0 0;
+				padding: 5px;
+
+				img {
+					width: 100%;
+			    height: 100%;
+			    object-fit: cover;
+			    border-radius: 50%;
+			    filter: grayscale(1)
+				}
+			}
+			.question-feedback {
+				margin-top: 110px;
+				position: absolute;
+				font-family: 'PF Cond';
+				font-weight: bold;
+
+				&.RÄTT {
+					color: green;
+				}
+				&.FEL {
+					color: red;
+				}
+			}
+
+			.green {
+				background-color: green;
+			}
+
+			.red {
+				background-color: red;
+			}
+
+			.quiz-progress-bar {
+				width: 100%;
+				height: 10px;
+				background-color: $grey;
+				margin-top: 10%;
+
+				.quiz-progress-percent {
+					height: 100%;
+					background-color: $black;
+				}
+			}
+
+			.quiz-questions-info {
+				font-family: 'PF Cond';
+			}
+		}
+	}
+}

@@ -13,6 +13,7 @@ add_action('init', function () {
         'query_var' => true,
         'rewrite' => ['slug' => 'tag'],
         'show_admin_column' => true,
+        'meta_box_cb' => false,
         'show_ui' => true,
     ]);
 });

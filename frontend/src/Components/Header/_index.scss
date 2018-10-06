@@ -4,12 +4,17 @@
   overflow: hidden;
   background-color: $black;
   height: 60px;
-
+  padding-left: 16px;
+  padding-right: 16px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .header_filter_logo {
   max-height: 35px;
+}
+
+.login_link_text {
+	text-transform: uppercase;
 }
