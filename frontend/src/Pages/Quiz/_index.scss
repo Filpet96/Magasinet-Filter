@@ -37,6 +37,11 @@ body {
 		align-items: center;
 		padding-right: 16px;
 		padding-left: 16px;
+		padding-bottom: 50px;
+
+		div {
+			width: 100%;
+		}
 
 		h1 {
 			font-family: 'PF Cond';
@@ -67,6 +72,26 @@ body {
 			align-items: center;
 			border-radius: 5px;
 
+
+			.result-text, .play-again-button {
+				font-family: 'PF Cond';
+				font-size: 25px;
+				font-weight: bold;
+			}
+			.play-again-button {
+				width: 50%;
+				height: 40px;
+				background-color: $black;
+				color: $white;
+				border-radius: 3px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+				margin-bottom: 15px;
+				text-transform: uppercase;
+			}
+
 			.quiz-bubble {
 				background-color: #F2F2F2;
 				justify-content: center;
@@ -74,6 +99,7 @@ body {
 				display: flex;
 				border-radius: 500px;
 				width: 95%;
+				height: 240px;
 				margin-top: 15%;
 				position: relative;
 
@@ -111,6 +137,14 @@ body {
 				border-radius: 50px;
 				margin: 75px 0 0;
 				padding: 5px;
+
+				&.pulsing {
+					animation-name: pulse_animation;
+					animation-duration: 2000ms;
+					transform-origin:70% 70%;
+					animation-iteration-count: infinite;
+					animation-timing-function: linear;
+				}
 
 				img {
 					width: 100%;
@@ -159,4 +193,12 @@ body {
 			}
 		}
 	}
+}
+
+@keyframes pulse_animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.03); }
+    65% { transform: scale(1.06); }
+    75% { transform: scale(1.03); }
+    100% { transform: scale(1); }
 }

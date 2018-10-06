@@ -13,7 +13,7 @@ class Quiz extends Component {
     quiz: false,
     politicians: false,
     quizQuestions: false,
-    question: 0,
+    question: 8,
     error: false,
     answer: 0
   };
@@ -21,8 +21,9 @@ class Quiz extends Component {
   constructor(props) {
   super(props)
   this.questionHandler = this.questionHandler.bind(this)
+  this.restartHandler = this.restartHandler.bind(this)
   }
-  
+
   componentDidMount() {
 
     fetch(`${endPoint}/quiz/179/`).then(response => response.json()).catch(error => {
@@ -41,8 +42,16 @@ class Quiz extends Component {
   }
 
   questionHandler() {
+
     this.setState(prevState => {
        return {question: prevState.question + 1}
+    });
+
+  }
+
+  restartHandler() {
+    this.setState(prevState => {
+       return {question: 0}
     });
   }
 
@@ -51,34 +60,6 @@ class Quiz extends Component {
   render() {
 
     const {quiz, politicians, quizQuestion, error} = this.state;
-    // this.state.quizQuestions[this.state.question] &&
-    // console.log('jimmie-åkesson' === this.state.quizQuestions[this.state.question].answer);
-    // console.log(quiz);
-
-    // var indents = [];
-    // for (var i = 0; i < {politicians}.politicians.length; i++) {
-    //   indents.push(<img className="politician-icon" onClick={this.handleVoting.bind(this, politicians[i].value)} src={{
-    //       politicians
-    //     }.politicians[i].image}/>);
-    // }
-
-    // var questionIndex = 0;
-
-
-    // handleVoting() {
-    //   if ( questionIndex == quizQuestions.length ) questionIndex = 0;
-    //   document.getElementById('mySentence').innerHTML = quiz.question[questionIndex];
-    //   questionIndex++;
-    // };
-
-    // console.log(quiz.questions);
-    // if (quiz.questions) {
-    //   for (var i = 0; i < Object.keys(quiz.questions).length; i++) {
-    //   }
-    // }
-
-    // componenen props={this.quizQuestions[this.question]}
-    // console.log(this.state.quiz.politicians);
 
     return (<div>
       <Header/>
@@ -104,6 +85,7 @@ class Quiz extends Component {
                 questionIndex={this.state.question}
                 answer={this.state.answer}
                 handler={this.questionHandler}
+                restarter={this.restartHandler}
                 />
         </div>
       </div>
