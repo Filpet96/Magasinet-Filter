@@ -8,6 +8,9 @@ import BottomMenu from "./Components/BottomMenu";
 
 class App extends Component {
   render() {
+    if (!App) {
+      return <div>Loading...</div>;
+    }
     return (
       <div className="app">
         <main>

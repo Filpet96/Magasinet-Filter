@@ -1,5 +1,6 @@
 import React from "react";
 import "./index";
+import { Link } from "@reach/router";
 
 import home_icon from "../../Icons/home.svg";
 import menu_icon from "../../Icons/menu.svg";
@@ -10,7 +11,9 @@ const BottomMenu = () => (
   <div className="bottom_menu_bar">
     <div className="menu_items">
       <div>
-        <img src={home_icon} alt="" />
+        <Link to="/">
+          <img src={home_icon} alt="" />
+        </Link>
         <span>Hem</span>
       </div>
       <div>

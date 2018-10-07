@@ -45,10 +45,9 @@ function getArticleById($data) {
           $article->$field = $value;
       }
       $article->tags = $tags;
+      return $article;
     } else {
       $article = null;
     }
-}
-
-return $article;
+    }
 }

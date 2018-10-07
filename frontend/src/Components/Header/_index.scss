@@ -4,12 +4,14 @@
   overflow: hidden;
   background-color: $black;
   height: 60px;
+  width: 100vw;
+  z-index: 100;
 
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.header_filter_logo {
-  max-height: 35px;
+  .header_filter_logo {
+    max-height: 35px;
+  }
 }

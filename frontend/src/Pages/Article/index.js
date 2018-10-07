@@ -4,12 +4,15 @@ import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
 
 import "./index";
-import BottomMenu from "../../Components/BottomMenu";
+import ArticalHeader from "../../Components/ArticalHeader";
 
 class Article extends Component {
   state = {
     error: false,
-    article: false
+    post: false,
+    fontSizeP: 19,
+    fontSizeH1: 45,
+    nightmode: false
   };
 
   componentDidMount() {
@@ -22,35 +25,89 @@ class Article extends Component {
       })
       .then(data => {
         this.setState({
-          article: data
+          post: data
         });
-        console.log(data);
       });
   }
 
+  incFontSize = () => {
+    console.log(this.state.fontSizeP);
+    this.setState({
+      fontSizeP: this.state.fontSizeP + 4,
+      fontSizeH1: this.state.fontSizeH1 + 4
+    });
+  };
+  decFontSize = () => {
+    console.log(this.state.fontSizeP);
+    this.setState({
+      fontSizeP: this.state.fontSizeP - 4,
+      fontSizeH1: this.state.fontSizeH1 - 4
+    });
+  };
+
+  nightmode_active = () => {
+    this.setState({
+      nightmode: true
+    });
+  };
+
   render() {
-    const { article } = this.state;
+    const { post, error } = this.state;
+    const fontSizeP = {
+      fontSize: `${this.state.fontSizeP}px`
+    };
+    const fontSizeH1 = {
+      fontSize: `${this.state.fontSizeH1}px`
+    };
+
+    const nightmode_active = {};
 
     return (
       <div className="articleContainer">
         <Helmet>
           <title>Filter - Artikel</title>
         </Helmet>
-        <div>
-          <img src={article.featured_image} alt={article.post_title} />
-          <h1>{article.headline}</h1>
-          <p>Reportage • 19 min lästid</p>
-          <p>
-            <i>Text:</i> MOHAMED YUSSUF
-          </p>
-          <p>
-            <i>Foto:</i> MAGNUS BERGSTRÖM
-          </p>
-          <p>Publicerad i Filter #63 (16 juli 2018)</p>
-          <i dangerouslySetInnerHTML={{ __html: article.lead }} />
-          <hr />
-          <p dangerouslySetInnerHTML={{ __html: article.body }} />
-        </div>
+        <ArticalHeader
+          incFontSize={this.incFontSize}
+          decFontSize={this.decFontSize}
+          nightmode={this.nightmode}
+        />
+        <h1 onClick={this.nightmode}>klick</h1>
+        {post && (
+          <div>
+            <img
+              className="article_featured_image"
+              src={post.featured_image}
+              alt={post.post_title}
+            />
+            <article>
+              <h2 onClick={this.incFontSize}>+</h2>
+              <h2 onClick={this.decFontSize}>-</h2>
+              <h1 style={fontSizeH1}>{post.headline}</h1>
+              <p>Reportage 19 min lästid</p>
+              <p className="article_contributors">
+                <i>Text:</i>
+                <span> {post.contributors.author}</span>
+              </p>
+              <p className="article_contributors">
+                <i>Foto:</i> <span> {post.contributors.photo}</span>
+              </p>
+
+              <p>Publicerad i Filter #63 (16 juli 2018)</p>
+              <i
+                className="article_lead"
+                dangerouslySetInnerHTML={{ __html: post.lead }}
+              />
+              <hr />
+              <p
+                style={fontSizeP}
+                className="article_body"
+                dangerouslySetInnerHTML={{ __html: post.body }}
+              />
+            </article>
+          </div>
+        )}
+        {/* end post*/}
       </div>
     );
   }

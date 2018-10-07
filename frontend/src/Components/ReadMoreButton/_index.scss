@@ -16,6 +16,10 @@
 
   display: inherit;
   align-items: center;
+
+  &:focus {
+    background-color: $white;
+  }
 }
 
 .read-more-button span {

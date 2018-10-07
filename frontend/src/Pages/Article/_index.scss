@@ -1,16 +1,28 @@
 .articleContainer {
   background-color: $white;
 
-  h1,
-  p,
-  i {
-    color: $black;
+  article {
+    margin: 0 16px;
   }
-}
 
-p {
-}
+  .article_featured_image {
+    width: 100%;
+  }
+  .article_body img {
+    width: 100%;
+    height: max-content;
+    object-fit: contain;
+  }
 
-.articleContainer h1 {
-  font-size: 45px;
+  .article_lead {
+    font-size: 23px;
+    color: #3e3e3e;
+    line-height: 30px;
+  }
+  .article_contributors {
+    font-size: 16px;
+    span {
+      font-weight: bold;
+    }
+  }
 }
