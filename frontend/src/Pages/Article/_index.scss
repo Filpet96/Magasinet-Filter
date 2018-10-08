@@ -46,7 +46,10 @@
   }
 }
 
-.nightmode_active {
+.nightmode {
   background-color: $black;
-  color: $white;
+  p,
+  h1 {
+    color: $white;
+  }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import endPoint from "../../Data/api";
+import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
+
 import "./index";
 import ArticalHeader from "../../Components/ArticalHeader";
 
@@ -9,12 +11,11 @@ class Article extends Component {
     error: false,
     post: false,
     fontSizeP: 19,
-    fontSizeH1: 45,
-    nightmodeActive: false
+    fontSizeH1: 45
   };
 
   componentDidMount() {
-    fetch(`${endPoint}/article/10`)
+    fetch(`${endPoint}/article/` + `10`)
       .then(response => response.json())
       .catch(error => {
         this.setState({
@@ -28,6 +29,7 @@ class Article extends Component {
       });
   }
 
+  /*{ FONT SIZE }*/
   incFontSize = () => {
     console.log(this.state.fontSizeP);
     this.setState({
@@ -43,16 +45,23 @@ class Article extends Component {
     });
   };
 
+  /*{ NIGHTMODE }*/
+  nightmode = () => {
+    this.setState({ className: "nightmode" });
+
+    if (this.state.className === "nightmode") {
+      this.setState({ className: "" });
+    }
+  };
+
   render() {
-    const { post } = this.state;
+    const { post, error } = this.state;
     const fontSizeP = {
       fontSize: `${this.state.fontSizeP}px`
     };
     const fontSizeH1 = {
       fontSize: `${this.state.fontSizeH1}px`
     };
-
-    // const nightmode_active = {};
 
     return (
       <div className="articleContainer">
@@ -65,7 +74,7 @@ class Article extends Component {
           nightmode={this.nightmode}
         />
         {post && (
-          <div>
+          <div className={this.state.className}>
             <img
               className="article_featured_image"
               src={post.featured_image}

@@ -5,10 +5,10 @@ import { Link } from "@reach/router";
 import back_icon from "../../Icons/back.svg";
 import aa_icon from "../../Icons/Aa.svg";
 import moon_icon from "../../Icons/moon.svg";
-// import moon_icon_active from "../../Icons/moon_active.svg";
+import moon_icon_active from "../../Icons/moon_active.svg";
 import bookmark_icon from "../../Icons/bookmark.svg";
-// import circle from "../../Icons/circle.svg";
-// import circle_fill from "../../Icons/circle_fill.svg";
+import circle from "../../Icons/circle.svg";
+import circle_fill from "../../Icons/circle_fill.svg";
 
 class ArticalHeader extends React.Component {
   constructor() {
@@ -59,7 +59,7 @@ class ArticalHeader extends React.Component {
           {this.state.displayCircles ? (
             <div className="dropdown">
               <p>Ändra textstorlek</p>
-              <div onClick={this.handleClick}>
+              <div>
                 <img
                   className="dropdown_svg"
                   onClick={this.props.decFontSize}
