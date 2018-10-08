@@ -6,14 +6,14 @@ class ArticlePreviewSmall extends Component {
     const { headline, featured_image, lead, post_title } = this.props;
 
     return (
-      <div className="article-preview-container">
-        <div className="article-preview-image">
-          <img src={featured_image} alt={post_title} />
-        </div>
-        <section>
-          <h1>{headline}</h1>
-          <p dangerouslySetInnerHTML={{ __html: lead }} />
-        </section>
+      <div className="small-article-preview-container">
+        <img
+          className="small-article-preview-image"
+          src={featured_image}
+          alt={post_title}
+        />
+        <h1>{headline}</h1>
+        <p dangerouslySetInnerHTML={{ __html: lead }} />
       </div>
     );
   }

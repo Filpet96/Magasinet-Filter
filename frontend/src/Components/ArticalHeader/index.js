@@ -59,7 +59,7 @@ class ArticalHeader extends React.Component {
           {this.state.displayCircles ? (
             <div className="dropdown">
               <p>Ändra textstorlek</p>
-              <div>
+              <div onClick={this.handleClick}>
                 <img
                   className="dropdown_svg"
                   onClick={this.props.decFontSize}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import endPoint from "../../Data/api";
 import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
+import PropTypes from "prop-types";
 
 import "./index";
 import ArticalHeader from "../../Components/ArticalHeader";
@@ -12,7 +13,7 @@ class Article extends Component {
     post: false,
     fontSizeP: 19,
     fontSizeH1: 45,
-    nightmode: false
+    nightmodeActive: false
   };
 
   componentDidMount() {
@@ -45,12 +46,6 @@ class Article extends Component {
     });
   };
 
-  nightmode_active = () => {
-    this.setState({
-      nightmode: true
-    });
-  };
-
   render() {
     const { post, error } = this.state;
     const fontSizeP = {
@@ -72,7 +67,6 @@ class Article extends Component {
           decFontSize={this.decFontSize}
           nightmode={this.nightmode}
         />
-        <h1 onClick={this.nightmode}>klick</h1>
         {post && (
           <div>
             <img
@@ -81,10 +75,8 @@ class Article extends Component {
               alt={post.post_title}
             />
             <article>
-              <h2 onClick={this.incFontSize}>+</h2>
-              <h2 onClick={this.decFontSize}>-</h2>
               <h1 style={fontSizeH1}>{post.headline}</h1>
-              <p>Reportage 19 min lästid</p>
+              <p className="article_readtime">Reportage 19 min lästid</p>
               <p className="article_contributors">
                 <i>Text:</i>
                 <span> {post.contributors.author}</span>
@@ -93,7 +85,9 @@ class Article extends Component {
                 <i>Foto:</i> <span> {post.contributors.photo}</span>
               </p>
 
-              <p>Publicerad i Filter #63 (16 juli 2018)</p>
+              <p className="article_published">
+                Publicerad i Filter #63 (16 juli 2018)
+              </p>
               <i
                 className="article_lead"
                 dangerouslySetInnerHTML={{ __html: post.lead }}

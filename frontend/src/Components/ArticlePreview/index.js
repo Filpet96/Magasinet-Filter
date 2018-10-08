@@ -18,7 +18,7 @@ class ArticlePreview extends Component {
           <p className="article-preview-category">Reportage • 19 min lästid</p>
           <p dangerouslySetInnerHTML={{ __html: lead }} />
 
-          <Link to="Article">
+          <Link to="/article">
             <ReadMoreButton />
           </Link>
         </section>

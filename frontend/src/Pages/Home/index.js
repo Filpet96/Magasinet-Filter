@@ -50,7 +50,6 @@ class Home extends Component {
             <h2 className="sub_headline">Utvalt för dig</h2>
             <ArticlePreviewSmall />
             <h2 className="sub_headline">Från nya numret</h2>
-            <ArticlePreviewSmall />
             <h2 className="sub_headline">
               Palmemordet: Den osannolika mördaren
             </h2>

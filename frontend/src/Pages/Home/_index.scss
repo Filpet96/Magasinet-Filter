@@ -8,12 +8,17 @@
   p {
     font-size: 18px;
   }
-  .sub_headline {
-    font-family: "PF Cond";
-    line-height: normal;
-    font-size: 18px;
-    letter-spacing: 0.05em;
-    color: $salmon;
-    text-transform: uppercase;
+
+  section {
+    margin: 0 16px;
+
+    .sub_headline {
+      font-family: "PF Cond";
+      line-height: normal;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      color: $salmon;
+      text-transform: uppercase;
+    }
   }
 }
