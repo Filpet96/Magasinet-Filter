@@ -9,12 +9,19 @@ import BottomMenu from "./Components/BottomMenu";
 
 class App extends Component {
   render() {
+    if (!App) {
+      return (
+        <div>
+          <p>Loading, please wait</p>
+        </div>
+      );
+    }
     return (
       <div className="app">
         <main>
           <Router>
             <Home path="/" />
-            <Article path="/Article" />
+            <Article path="/article" />
             <Quiz path="/quiz" />
           </Router>
         </main>

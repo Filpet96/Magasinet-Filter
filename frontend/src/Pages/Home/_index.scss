@@ -1,12 +1,24 @@
-.sub_headline {
-  font-family: "PF Cond";
-  line-height: normal;
-  font-size: 18px;
-  letter-spacing: 0.05em;
-  color: $salmon;
-  text-transform: uppercase;
-}
-
-body {
+.homeContainer {
   background-color: $black;
+  color: $white;
+
+  h1 {
+    font-size: 39px;
+  }
+  p {
+    font-size: 18px;
+  }
+
+  section {
+    margin: 0 16px;
+
+    .sub_headline {
+      font-family: "PF Cond";
+      line-height: normal;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      color: $salmon;
+      text-transform: uppercase;
+    }
+  }
 }

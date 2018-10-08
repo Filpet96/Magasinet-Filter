@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import endPoint from "../../Data/api";
+import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
+import endPoint from "../../Data/api";
 import ArticlePreview from "../../Components/ArticlePreview";
 import Header from "../../Components/Header";
+import ArticlePreviewSmall from "../../Components/ArticlePreviewSmall";
 
 import "./index";
 
@@ -36,16 +38,21 @@ class Home extends Component {
         <Helmet>
           <title>Filter - start</title>
         </Helmet>
-        <div>
+        <section className="homeContainer">
           <ArticlePreview
             headline={article.headline}
             lead={article.lead}
             featured_image={article.featured_image}
           />
-          <h2 className="sub_headline">Utvalt för dig</h2>
-          <h2 className="sub_headline">Från nya numret</h2>
-          <h2 className="sub_headline">Palmemordet: Den osannolika mördaren</h2>
-        </div>
+          <section>
+            <h2 className="sub_headline">Utvalt för dig</h2>
+            <ArticlePreviewSmall />
+            <h2 className="sub_headline">Från nya numret</h2>
+            <h2 className="sub_headline">
+              Palmemordet: Den osannolika mördaren
+            </h2>
+          </section>
+        </section>
       </div>
     );
   }

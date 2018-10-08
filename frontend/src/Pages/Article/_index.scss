@@ -1,16 +1,52 @@
 .articleContainer {
   background-color: $white;
 
-  h1,
-  p,
-  i {
-    color: $black;
+  article {
+    margin: 0 16px;
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
+  .article_featured_image {
+    width: 100%;
+  }
+  .article_body img {
+    width: 100%;
+    height: max-content;
+    object-fit: contain;
+  }
+
+  .article_lead {
+    font-size: 23px;
+    color: #3e3e3e;
+    line-height: 30px;
+  }
+  .article_contributors {
+    font-size: 16px;
+    margin: 0;
+    span {
+      font-weight: bold;
+    }
+  }
+  .article_readtime {
+    font-family: "PF Text";
+    color: #e1ab99;
+    letter-spacing: 0.02em;
+    margin-top: 5px;
+  }
+  .article_published {
+    font-family: "PF Text";
+    line-height: 12px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #707070;
   }
 }
 
-p {
-}
-
-.articleContainer h1 {
-  font-size: 45px;
+.nightmode_active {
+  background-color: $black;
+  color: $white;
 }
