@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import "./App";
 
 import Home from "./Pages/Home";
@@ -15,7 +15,7 @@ class App extends Component {
           <Router>
             <Home path="/" />
             <Article path="/Article" />
-            <Quiz path="/Quiz" />
+            <Quiz path="/quiz" />
           </Router>
         </main>
         <BottomMenu />

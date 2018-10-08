@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-import {Router, Link} from "@reach/router";
-import Helmet from "react-helmet";
 import Zoom from 'react-reveal/Zoom';
-
-import "./index";
+import Arrow from '../../../images/arrow.svg';
 
 class Question extends Component {
   state = {
@@ -22,7 +19,7 @@ class Question extends Component {
       this.setState({
         clicked: true
       });
-    if (answer == this.props.questions[this.props.questionIndex].answer) {
+    if (answer === this.props.questions[this.props.questionIndex].answer) {
       let newAnswerClasses = this.state.answerClasses;
       newAnswerClasses[index] = 'green';
       this.setState({
@@ -58,20 +55,22 @@ class Question extends Component {
   }
 
   render() {
-
     var politicians = [];
 
     if (this.props.politicians) {
       for (var i = 0; i < this.props.politicians.length; i++) {
-        politicians.push(<div className={'politician-icon ' + this.state.answerClasses[i] + (this.state.clicked ? ' not-pulsing' : ' pulsing')}><img onClick={this.handleVoting.bind(this, this.props.politicians[i].value, i)} src={this.props.politicians[i].image}/></div>);
+        politicians.push(
+          <div key={i} className={'politician-icon ' + this.state.answerClasses[i] + (this.state.clicked ? ' not-pulsing' : ' pulsing')}>
+            <img key={i} onClick={this.handleVoting.bind(this, this.props.politicians[i].value, i)} src={this.props.politicians[i].image} alt={this.props.politicians[i].slug}/>
+          </div>);
       }
       if (this.state.questionFeedback) {
-        politicians.splice(1, 0, <p className={'question-feedback ' + this.state.questionFeedback}>{this.state.questionFeedback}!</p>);
+        politicians.splice(1, 0, <p key="feedback" className={'question-feedback ' + this.state.questionFeedback}>{this.state.questionFeedback}!</p>);
       }
     }
 
     var progress = {
-      width:  this.props.questionIndex + '0%'
+      width:  this.props.questionIndex + 1 + '0%'
     };
     return (<div>
       {
@@ -96,10 +95,15 @@ class Question extends Component {
           </div>
       }
       {
-        !this.props.question && <div className="quiz-container">
-            <h2 className="result-text">Du fick {this.state.score} rätt av {this.props.questions.length}!</h2>
-            <div className="play-again-button" onClick={this.restartQuiz.bind(this)}>Gör quizet igen</div>
+        !this.props.question && <div><div className="quiz-container">
+            <h3 className="result-text">Du fick {this.state.score} rätt av {this.props.questions.length}!</h3>
+            <div className="play-again-button" onClick={this.restartQuiz.bind(this)}><h5>Gör quizet igen</h5></div>
           </div>
+          <div className="answer-list">
+          <h4>Visa rätt svar</h4><img src={Arrow} alt="dropdown-arrow"/>
+          </div>
+          </div>
+
       }
 
     </div>);

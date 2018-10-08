@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Harriet Display";
+  src: url("Fonts/harriet-display-regular.otf");
+}
+
+@font-face {
+  font-family: "Harriet Text";
+  src: url("Fonts/harriet-text-regular.ttf");
+}
+
+@font-face {
+  font-family: "PF Text";
+  src: url("Fonts/pf-din-text-pro.otf");
+}
+
+@font-face {
+  font-family: "PF Cond";
+  src: url("Fonts/pf-din-text-cond-pro-regular.otf");
+}
+@font-face {
+font-family: 'PF Cond';
+src: url('Fonts/pf-din-text-cond-pro-bold.otf');
+font-weight: bold;
+}
+
+/* FONTS */
+h1 {
+  font-size: 39px;
+  font-family: "Harriet Display";
+  line-height: 43px;
+  font-weight: normal;
+  letter-spacing: 1%;
+}
+h2, h3, h4 {
+  font-family: "PF Cond";
+  font-size: 35px;
+  line-height: 39px;
+  font-weight: bold;
+  letter-spacing: 1%;
+}
+h3 {
+  font-size: 25px;
+  line-height: 28px;
+}
+h4 {
+  font-size: 22px;
+  line-height: 24px;
+}
+h5 {
+  font-size: 18px;
+  letter-spacing: 2%;
+}
+p {
+  font-size: 19px;
+  font-family: "Harriet Text";
+  line-height: 21px;
+
+  &.small {
+    font-size: 17px;
+    line-height: 19px;
+  }
+}
+span {
+  font-size: 16px;
+  font-family: "PF Text";
+  color: $salmon;
+  line-height: 19px;
+  letter-spacing: 2%;
+
+
+  &.published {
+    color: $dark-salmon;
+    font-size: 11px;
+    line-height: 12px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+a {
+	text-decoration: none;
+	color: $salmon;
+	font-family: "PF Cond";
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.cursive {
+  font-style: italic;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.underline {
+  text-decoration: underline;
+}
+.bold {
+  font-weight: bold;
+}
+.center {
+  text-align: center;
+}

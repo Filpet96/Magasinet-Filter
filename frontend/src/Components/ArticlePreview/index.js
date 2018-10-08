@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./index";
 import ReadMoreButton from "../ReadMoreButton";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 
 class ArticlePreview extends Component {
   render() {

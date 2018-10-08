@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import endPoint from "../../Data/api";
-import {Router, Link} from "@reach/router";
 import Helmet from "react-helmet";
 import Header from "../../Components/Header";
 import TrialPopup from "../../Components/TrialPopup";
+import ShareArticle from "../../Components/ShareArticle";
 import Question from "./Question";
 import "./index";
 
@@ -13,7 +13,7 @@ class Quiz extends Component {
     quiz: false,
     politicians: false,
     quizQuestions: false,
-    question: 8,
+    question: 0,
     error: false,
     answer: 0
   };
@@ -28,7 +28,6 @@ class Quiz extends Component {
 
     fetch(`${endPoint}/quiz/179/`).then(response => response.json()).catch(error => {
       this.setState({error});
-      console.log(error);
     }).then(data => {
       this.setState({quiz: data});
       this.setState({quizQuestions: Object.values(data.questions)});
@@ -42,7 +41,6 @@ class Quiz extends Component {
   }
 
   questionHandler() {
-
     this.setState(prevState => {
        return {question: prevState.question + 1}
     });
@@ -58,8 +56,7 @@ class Quiz extends Component {
 
 
   render() {
-
-    const {quiz, politicians, quizQuestion, error} = this.state;
+    // const {quiz} = this.state;
 
     return (<div>
       <Header/>
@@ -68,16 +65,16 @@ class Quiz extends Component {
       </Helmet>
       <TrialPopup/>
       <div className="quizContainer">
-        <p className="text-salmon">Filterbubblan</p>
-        <p className="text-dark-salmon">PUBLICERAD FREDAG 07 SEPTEMBER 2018</p>
-        <h1>{quiz.post_title}</h1>
-        <img onClick={this.questionHandler.bind()} src={quiz.featured_image} className="featured_image" alt="Quiz Featured Image"/>
-        <p dangerouslySetInnerHTML={{
-            __html: quiz.quiz_content_text
+        <span>Filterbubblan</span>
+        <span className="published">PUBLICERAD FREDAG 07 SEPTEMBER 2018</span>
+        <h1>{this.state.quiz.post_title}</h1>
+        <img src={this.state.quiz.featured_image} className="featured_image" alt="quiz-featured"/>
+        <p className="quiz-content" dangerouslySetInnerHTML={{
+            __html: this.state.quiz.quiz_content_text
           }}/>
         <div className="bill-bull-quiz">
-          <h1 className="uppercase bold">{quiz.quiz_header_text}</h1>
-          <h3 className="quiz_sub_header">{quiz.quiz_sub_header_content}</h3>
+          <h2 className="uppercase bold quiz_header_text">{this.state.quiz.quiz_header_text}</h2>
+          <p className="quiz_sub_header center">{this.state.quiz.quiz_sub_header_content}</p>
               <Question
                 questions={this.state.quizQuestions}
                 politicians={this.state.quiz.politicians}
@@ -88,6 +85,7 @@ class Quiz extends Component {
                 restarter={this.restartHandler}
                 />
         </div>
+        <ShareArticle/>
       </div>
     </div>);
   }

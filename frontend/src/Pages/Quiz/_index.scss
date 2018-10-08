@@ -9,25 +9,25 @@ body {
 .quizContainer {
 	padding-left: 16px;
 	padding-right: 16px;
-
-	p {
-		font-size: 11px;
-	}
-
-	span {
-		font-size: 11px;
-		font-weight: normal;
-		font-style: normal;
-		margin-left: 3px;
-	}
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
 
 	.featured_image {
 		width: calc(100% + 32px);
 		margin-left: -16px;
 	}
+	.quiz-content {
+		p:first-child {
+			margin-top: 0;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 
 	.bill-bull-quiz {
-		margin-top: 50px;
 		width: calc(100% + 32px);
 		margin-left: -16px;
 		height: 100%;
@@ -37,29 +37,24 @@ body {
 		align-items: center;
 		padding-right: 16px;
 		padding-left: 16px;
-		padding-bottom: 50px;
 
 		div {
 			width: 100%;
 		}
-
-		h1 {
-			font-family: 'PF Cond';
-			font-size: 35px;
-			margin-bottom: 0;
+		.quiz_sub_header {
+			margin-top: 0;
+		}
+		.quiz_header_text {
+			margin-bottom: 5%;
 		}
 
-		h3 {
-			width: 90%;
-			font-size: 19px;
-			margin-top: 15px;
-			font-weight: normal;
-			font-family: 'Harriet Text';
-		}
+		.answer-list {
+			display: flex;
+			justify-content: center;
 
-		p {
-			font-size: 19px;
-			font-family: 'Harriet Text';
+			img {
+				margin-left: 15px;
+			}
 		}
 
 		.quiz-container {
@@ -71,13 +66,9 @@ body {
 			flex-direction: column;
 			align-items: center;
 			border-radius: 5px;
+			margin-bottom: 25px;
 
 
-			.result-text, .play-again-button {
-				font-family: 'PF Cond';
-				font-size: 25px;
-				font-weight: bold;
-			}
 			.play-again-button {
 				width: 50%;
 				height: 40px;
@@ -90,6 +81,9 @@ body {
 				font-size: 18px;
 				margin-bottom: 15px;
 				text-transform: uppercase;
+				font-family: 'PF Cond';
+				font-size: 25px;
+				font-weight: bold;
 			}
 
 			.quiz-bubble {
@@ -140,7 +134,7 @@ body {
 
 				&.pulsing {
 					animation-name: pulse_animation;
-					animation-duration: 2000ms;
+					animation-duration: 1500ms;
 					transform-origin:70% 70%;
 					animation-iteration-count: infinite;
 					animation-timing-function: linear;
@@ -162,18 +156,27 @@ body {
 
 				&.RÄTT {
 					color: green;
+
 				}
 				&.FEL {
 					color: red;
+
 				}
 			}
 
 			.green {
 				background-color: green;
+				img {
+					filter: grayscale(100%) brightness(60%) sepia(50%) hue-rotate(100deg) saturate(1000%) contrast(0.8)
+				}
 			}
 
 			.red {
 				background-color: red;
+
+				img {
+					filter: grayscale(100%) brightness(60%) sepia(50%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+				}
 			}
 
 			.quiz-progress-bar {
@@ -197,8 +200,8 @@ body {
 
 @keyframes pulse_animation {
     0% { transform: scale(1); }
-    30% { transform: scale(1.03); }
-    65% { transform: scale(1.06); }
-    75% { transform: scale(1.03); }
-    100% { transform: scale(1); }
+		25% { transform: scale(1.025); }
+    50% { transform: scale(1.05); }
+    75% { transform: scale(1.025); }
+		100% { transform: scale(1); }
 }

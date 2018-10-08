@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-
 import endPoint from "../../Data/api";
-
-import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
-
 import ArticlePreview from "../../Components/ArticlePreview";
 import Header from "../../Components/Header";
 
@@ -17,7 +13,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    fetch(`${endPoint}/article/` + `10`)
+    fetch(`${endPoint}/article/10`)
       .then(response => response.json())
       .catch(error => {
         this.setState({
@@ -32,7 +28,7 @@ class Home extends Component {
   }
 
   render() {
-    const { article, error } = this.state;
+    const { article } = this.state;
 
     return (
       <div>

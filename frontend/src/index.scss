@@ -1,6 +1,6 @@
 @import "~sanitize.css";
-@import "Colors";
-@import "./Fonts/fonts";
-@import "App";
+@import "styles/colors";
+@import "styles/typography";
 @import "./Pages/_pagesScssAll.scss";
 @import "./Components/_componentsScssAll.scss";
+@import "styles/components/shareArticle"

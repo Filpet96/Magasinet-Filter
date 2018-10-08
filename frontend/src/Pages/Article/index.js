@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import endPoint from "../../Data/api";
-import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
-
 import "./index";
-import BottomMenu from "../../Components/BottomMenu";
 
 class Article extends Component {
   state = {
@@ -13,7 +10,7 @@ class Article extends Component {
   };
 
   componentDidMount() {
-    fetch(`${endPoint}/article/` + `10`)
+    fetch(`${endPoint}/article/10`)
       .then(response => response.json())
       .catch(error => {
         this.setState({
