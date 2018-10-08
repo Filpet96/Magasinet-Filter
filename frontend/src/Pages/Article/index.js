@@ -82,19 +82,24 @@ class Article extends Component {
             />
             <article>
               <h1 style={fontSizeH1}>{post.headline}</h1>
-              <p className="article_readtime">Reportage 19 min lästid</p>
+              <p className="article_readtime">Reportage • 19 min lästid</p>
               <p className="article_contributors">
-                <i>Text:</i>
-                <span> {post.contributors.author}</span>
+                <em>Text: </em>
+                <span className="article_contributors_item uppercase bold underline">
+                  {post.contributors.author}
+                </span>
               </p>
               <p className="article_contributors">
-                <i>Foto:</i> <span> {post.contributors.photo}</span>
+                <em>Foto: </em>
+                <span className="article_contributors_item uppercase bold underline">
+                  {post.contributors.photo}
+                </span>
               </p>
 
-              <p className="article_published">
+              <span className="published uppercase">
                 Publicerad i Filter #63 (16 juli 2018)
-              </p>
-              <i
+              </span>
+              <em
                 className="article_lead"
                 dangerouslySetInnerHTML={{ __html: post.lead }}
               />

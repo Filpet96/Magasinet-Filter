@@ -18,9 +18,9 @@
   src: url("Fonts/pf-din-text-cond-pro-regular.otf");
 }
 @font-face {
-font-family: 'PF Cond';
-src: url('Fonts/pf-din-text-cond-pro-bold.otf');
-font-weight: bold;
+  font-family: "PF Cond";
+  src: url("Fonts/pf-din-text-cond-pro-bold.otf");
+  font-weight: bold;
 }
 
 /* FONTS */
@@ -31,7 +31,9 @@ h1 {
   font-weight: normal;
   letter-spacing: 1%;
 }
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: "PF Cond";
   font-size: 35px;
   line-height: 39px;
@@ -67,7 +69,6 @@ span {
   line-height: 19px;
   letter-spacing: 2%;
 
-
   &.published {
     color: $dark-salmon;
     font-size: 11px;
@@ -77,11 +78,11 @@ span {
   }
 }
 a {
-	text-decoration: none;
-	color: $salmon;
-	font-family: "PF Cond";
-	font-size: 18px;
-	font-weight: bold;
+  text-decoration: none;
+  color: $salmon;
+  font-family: "PF Cond";
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .cursive {
@@ -91,7 +92,7 @@ a {
   text-transform: uppercase;
 }
 .underline {
-  text-decoration: underline;
+  border-bottom: 1px solid $salmon;
 }
 .bold {
   font-weight: bold;

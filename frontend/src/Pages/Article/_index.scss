@@ -24,32 +24,27 @@
   }
   .article_contributors {
     font-size: 16px;
-    margin: 0;
-    span {
-      font-weight: bold;
+    margin: 2% 0;
+    .article_contributors_item {
+      font-family: "Harriet text";
+      color: $black;
     }
   }
   .article_readtime {
     font-family: "PF Text";
     color: #e1ab99;
+    font-size: 16px;
     letter-spacing: 0.02em;
-    margin-top: 5px;
-  }
-  .article_published {
-    font-family: "PF Text";
-    line-height: 12px;
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-
-    color: #707070;
+    margin-top: 3%;
   }
 }
 
 .nightmode {
   background-color: $black;
   p,
-  h1 {
+  h1,
+  i,
+  .article_contributors > .article_contributors_item {
     color: $white;
   }
 }
