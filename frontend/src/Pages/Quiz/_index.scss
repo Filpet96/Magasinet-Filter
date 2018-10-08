@@ -187,6 +187,7 @@ body {
 
 				.quiz-progress-percent {
 					height: 100%;
+					transition: width 500ms linear;
 					background-color: $black;
 				}
 			}

@@ -103,7 +103,6 @@ class Question extends Component {
           <h4>Visa rätt svar</h4><img src={Arrow} alt="dropdown-arrow"/>
           </div>
           </div>
-
       }
 
     </div>);

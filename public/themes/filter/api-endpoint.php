@@ -35,6 +35,9 @@ add_action( 'rest_api_init', function () {
   ) );
 } );
 
+
+
+
 function getPoliticians() {
   $politicians = get_terms( array(
     'taxonomy' => 'politician',
@@ -149,4 +152,39 @@ function getArticleById($data) {
       $article = null;
     }
     }
+}
+
+// Get article by tag
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'filter', '/article/tag/(?P<tag>\w+)/', array(
+    'methods' => 'GET',
+    'callback' => 'getArticleByTag',
+  ) );
+} );
+
+
+function getArticleByTag($data) {
+  $articlesByTag = null;
+  $articles = get_posts([
+      'post_type' => 'article',
+      'numberposts' => -1,
+  ]);
+
+
+  foreach ($articles as $article) {
+    $tags = get_the_terms($article, 'tag');
+    $customFields = get_fields($article);
+    foreach ($customFields as $field => $value) {
+        $article->$field = $value;
+    }
+
+    foreach ($tags as $tag) {
+    if ($tag->slug == $data['tag']) {
+      $articlesByTag[] = $article;
+    }
+    }
+  }
+
+
+  return $articlesByTag;
 }

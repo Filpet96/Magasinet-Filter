@@ -31,7 +31,7 @@ h1 {
   font-weight: normal;
   letter-spacing: 1%;
 }
-h2, h3, h4 {
+h2, h3, h4, h5 {
   font-family: "PF Cond";
   font-size: 35px;
   line-height: 39px;
@@ -48,6 +48,7 @@ h4 {
 }
 h5 {
   font-size: 18px;
+  line-height: 20px;
   letter-spacing: 2%;
 }
 p {
@@ -58,6 +59,10 @@ p {
   &.small {
     font-size: 17px;
     line-height: 19px;
+  }
+  &.x-small {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 span {

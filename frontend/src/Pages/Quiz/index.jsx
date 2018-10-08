@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import Header from "../../Components/Header";
 import TrialPopup from "../../Components/TrialPopup";
 import ShareArticle from "../../Components/ShareArticle";
+import ArticlePreviewSlider from "../../Components/ArticlePreviewSlider";
 import Question from "./Question";
 import "./index";
 
@@ -86,6 +87,7 @@ class Quiz extends Component {
                 />
         </div>
         <ShareArticle/>
+        <ArticlePreviewSlider tag='filterbubblan' headerText='Mer från filterbubblan'/>
       </div>
     </div>);
   }

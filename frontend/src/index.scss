@@ -3,4 +3,7 @@
 @import "styles/typography";
 @import "./Pages/_pagesScssAll.scss";
 @import "./Components/_componentsScssAll.scss";
-@import "styles/components/shareArticle"
+@import "styles/components/shareArticle";
+@import "styles/components/ArticlePreviewSlider";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
