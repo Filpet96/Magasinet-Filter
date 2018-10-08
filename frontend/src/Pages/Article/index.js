@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import endPoint from "../../Data/api";
 import Helmet from "react-helmet";
-import PropTypes from "prop-types";
 import "./index";
 import ArticalHeader from "../../Components/ArticalHeader";
 
@@ -45,7 +44,7 @@ class Article extends Component {
   };
 
   render() {
-    const { post, error } = this.state;
+    const { post } = this.state;
     const fontSizeP = {
       fontSize: `${this.state.fontSizeP}px`
     };
@@ -53,7 +52,7 @@ class Article extends Component {
       fontSize: `${this.state.fontSizeH1}px`
     };
 
-    const nightmode_active = {};
+    // const nightmode_active = {};
 
     return (
       <div className="articleContainer">

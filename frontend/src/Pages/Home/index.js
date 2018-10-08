@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Router, Link } from "@reach/router";
 import Helmet from "react-helmet";
 import endPoint from "../../Data/api";
 import ArticlePreview from "../../Components/ArticlePreview";
