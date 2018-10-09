@@ -1,0 +1,25 @@
+.app {
+  .loading-screen-container {
+    display: none;
+    z-index: 999;
+  }
+  &.loading-screen {
+    .loading-screen-container {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $black;
+
+      .loading-screen-animation {
+        width: 100px;
+      }
+    }
+    .fade {
+      opacity: 0;
+      transition: opacity 0.5s ease-in;
+    }
+  }
+}
