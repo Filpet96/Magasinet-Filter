@@ -1,6 +1,5 @@
 .article-preview-container {
   padding-bottom: 5%;
-  margin: 0 16px;
 
   h1 {
     margin-top: -32%;
@@ -20,10 +19,7 @@
 .article-preview-image {
   width: 100%;
   position: relative;
-  // left: 50%;
-  // right: 50%;
-  // margin-left: -50vw;
-  // margin-right: -50vw;
+
   img {
     z-index: -10;
     width: 100%;
