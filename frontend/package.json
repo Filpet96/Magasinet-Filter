@@ -10,6 +10,7 @@
     "react-helmet": "^5.2.0",
     "react-reveal": "^1.2.2",
     "react-scripts": "2.0.3",
+    "react-scroll-to-component": "^1.0.2",
     "react-slick": "^0.23.1",
     "react-timeout": "^1.1.2",
     "sanitize.css": "^7.0.3",

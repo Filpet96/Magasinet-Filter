@@ -156,7 +156,7 @@ function getArticleById($data) {
 
 // Get article by tag
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'filter', '/article/tag/(?P<tag>\w+)/', array(
+  register_rest_route( 'filter', '/article/tag/(?P<tag>\S+)/', array(
     'methods' => 'GET',
     'callback' => 'getArticleByTag',
   ) );

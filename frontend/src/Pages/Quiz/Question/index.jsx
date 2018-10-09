@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import Zoom from 'react-reveal/Zoom';
 import Arrow from '../../../images/arrow.svg';
+import scrollToComponent from 'react-scroll-to-component';
+
 
 class Question extends Component {
   state = {
@@ -8,14 +10,25 @@ class Question extends Component {
     questionFeedback: false,
     clicked: false,
     bubble: true,
+    quizCompleted: false,
     score: 0
   };
+
+
+  scrollToElement = () => {
+    if (this.state.quizCompleted) {
+      scrollToComponent(this.Result, { offset: 0, align: 'middle', duration: 300, ease:'inCirc'});
+    }
+    if (!this.state.quizCompleted) {
+      scrollToComponent(this.NewQuiz, { offset: 0, align: 'middle', duration: 300, ease:'inCirc'});
+    }
+   }
 
   handleVoting(answer, index) {
     if (!this.state.clicked) {
       setTimeout(() => {
         this.setState({ bubble: false });
-      }, 2500)
+      }, 1500)
       this.setState({
         clicked: true
       });
@@ -43,15 +56,26 @@ class Question extends Component {
         clicked: false,
         bubble: true
       });
-    }, 3000)
+      if (!this.props.question) {
+        this.setState({
+          quizCompleted: true
+        });
+          this.scrollToElement();
+      }
+
+    }, 2000)
   }
   }
 
   restartQuiz() {
     this.setState({
+      quizCompleted: false,
       score: 0
     });
-    this.props.restarter()
+    setTimeout(() => {
+      this.props.restarter();
+      this.scrollToElement();
+    }, 500)
   }
 
   render() {
@@ -75,7 +99,7 @@ class Question extends Component {
     return (<div>
       {
         this.props.question &&
-        <div className="quiz-container">
+        <div ref={(section) => { this.NewQuiz = section; }} className="quiz-container">
 
             <Zoom when={this.state.bubble}>
             <div className="quiz-bubble">
@@ -95,7 +119,7 @@ class Question extends Component {
           </div>
       }
       {
-        !this.props.question && <div><div className="quiz-container">
+        this.state.quizCompleted && <div><div ref={(section) => { this.Result = section; }} className="quiz-container">
             <h3 className="result-text">Du fick {this.state.score} rätt av {this.props.questions.length}!</h3>
             <div className="play-again-button" onClick={this.restartQuiz.bind(this)}><h5>Gör quizet igen</h5></div>
           </div>

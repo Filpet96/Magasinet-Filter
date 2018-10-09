@@ -1,8 +1,20 @@
+.article-slider {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  padding-left: 16px;
+
+&.dark-mode {
+  background-color: $black;
+  h5, p {
+    color: $white;
+  }
+}
+
 .article-preview-slider-container {
   .preview-small-image {
     width: 215px;
     height: 130px;
-
+    object-fit: cover;
     border-radius: 3px;
   }
   h5 {
@@ -12,6 +24,8 @@
   p {
     @extend .x-small;
     font-family: "PF Cond";
+    hyphens: auto;
+    word-break: break-word;
   }
 }
 
@@ -23,8 +37,8 @@
 
 .preview-slider-header {
   height: 50px;
+  width: calc(100% + 16px);
   margin-left: -16px;
-  width: calc(100% + 32px);
   background-color: $black;
   display: flex;
   align-items: center;
@@ -39,4 +53,5 @@
     font-weight: bold;
     letter-spacing: 5%;
   }
+}
 }

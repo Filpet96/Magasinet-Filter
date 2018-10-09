@@ -14,7 +14,7 @@ class Quiz extends Component {
     quiz: false,
     politicians: false,
     quizQuestions: false,
-    question: 0,
+    question: 9,
     error: false,
     answer: 0
   };
@@ -45,7 +45,6 @@ class Quiz extends Component {
     this.setState(prevState => {
        return {question: prevState.question + 1}
     });
-
   }
 
   restartHandler() {
@@ -57,8 +56,6 @@ class Quiz extends Component {
 
 
   render() {
-    // const {quiz} = this.state;
-
     return (<div>
       <Header/>
       <Helmet>
@@ -87,7 +84,11 @@ class Quiz extends Component {
                 />
         </div>
         <ShareArticle/>
-        <ArticlePreviewSlider tag='filterbubblan' headerText='Mer från filterbubblan'/>
+        <ArticlePreviewSlider tag='filterbubblan' headerText='Mer från filterbubblan' />
+          {
+            !this.state.quizQuestions[this.state.question] &&
+            <ArticlePreviewSlider tag='tunga-granskningar' headerText='Mer från magasinet' darkMode={true}/>
+          }
       </div>
     </div>);
   }

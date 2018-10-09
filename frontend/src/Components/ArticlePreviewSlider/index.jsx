@@ -22,6 +22,7 @@ class ArticlePreviewSlider extends React.Component {
     var settings = {
       infinite: true,
       variableWidth: true,
+      arrows : false,
       speed: 300
     };
     let articles;
@@ -39,7 +40,7 @@ class ArticlePreviewSlider extends React.Component {
      }
 
     return (
-      <div>
+      <div className={'article-slider ' + (this.props.darkMode ? 'dark-mode' : '')}>
       <div className="preview-slider-header">
         <h5>{this.props.headerText}</h5>
       </div>
