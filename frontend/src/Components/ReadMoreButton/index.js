@@ -8,7 +8,7 @@ const ReadMoreButton = props => (
       <span>
         <img src={Book} alt="" />
       </span>
-      <span>Läs nu</span>
+      <span className="text-dark">Läs nu</span>
     </button>
   </div>
 );
