@@ -5,6 +5,7 @@
     margin: 0 16px;
     h1 {
       margin-bottom: 0;
+      line-height: 50px;
     }
   }
 
@@ -12,16 +13,37 @@
     width: 100%;
     margin-top: 50px;
   }
-  .article_body img {
-    width: 100%;
-    height: max-content;
-    object-fit: contain;
-  }
+  .article_body {
+    font-family: "Harriet Text";
+    line-height: 1.5;
+    p {
+      line-height: 1.5;
+      font-size: unset;
+
+      .s2 {
+        font-weight: bold;
+        line-height: normal;
+        font-size: 1.3em;
+        font-family: "Harriet Display";
+
+        &.ingangsord {
+          // font-size: 1em;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: max-content;
+      object-fit: contain;
+    }
+  } //end article body
 
   .article_lead {
-    font-size: 23px;
-    color: #3e3e3e;
-    line-height: 30px;
+    p {
+      color: #3e3e3e;
+      font-size: 23px;
+      line-height: 1.5;
+    }
   }
   .article_contributors {
     font-size: 16px;
@@ -49,5 +71,8 @@
   .article_contributors > .article_contributors_item {
     transition: color 0.4s ease-out;
     color: $white;
+  }
+  .article_lead p {
+    color: #c3c3c3;
   }
 }

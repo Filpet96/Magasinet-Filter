@@ -77,7 +77,7 @@ class ArticalHeader extends React.Component {
               <div>
                 <img
                   className="dropdown_svg"
-                  onClick={this.toogleFontSize}
+                  onClick={this.props.decFontSize}
                   src={this.state.fillCircle ? circle_fill : circle}
                   alt=""
                 />
