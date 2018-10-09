@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import endPoint from "../../Data/api";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 import Helmet from "react-helmet";
 
 import "./index";
