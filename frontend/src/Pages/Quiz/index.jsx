@@ -16,6 +16,7 @@ class Quiz extends Component {
     quizQuestions: false,
     question: 9,
     error: false,
+    quizCompleted: false,
     answer: 0
   };
 
@@ -23,6 +24,7 @@ class Quiz extends Component {
   super(props)
   this.questionHandler = this.questionHandler.bind(this)
   this.restartHandler = this.restartHandler.bind(this)
+  this.completedHandler = this.completedHandler.bind(this)
   }
 
   componentDidMount() {
@@ -49,8 +51,13 @@ class Quiz extends Component {
 
   restartHandler() {
     this.setState(prevState => {
-       return {question: 0}
-    });
+       return {question: 0, quizCompleted: false}
+    })
+  }
+  completedHandler() {
+    this.setState(prevState => {
+      return {quizCompleted: true}
+    })
   }
 
 
@@ -81,12 +88,13 @@ class Quiz extends Component {
                 answer={this.state.answer}
                 handler={this.questionHandler}
                 restarter={this.restartHandler}
+                quizCompleted={this.completedHandler}
                 />
         </div>
         <ShareArticle/>
         <ArticlePreviewSlider tag='filterbubblan' headerText='Mer från filterbubblan' />
           {
-            !this.state.quizQuestions[this.state.question] &&
+            this.state.quizCompleted &&
             <ArticlePreviewSlider tag='tunga-granskningar' headerText='Mer från magasinet' darkMode={true}/>
           }
       </div>

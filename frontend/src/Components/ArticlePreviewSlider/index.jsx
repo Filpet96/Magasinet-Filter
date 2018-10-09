@@ -11,7 +11,7 @@ class ArticlePreviewSlider extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`${endPoint}/article/tag/${this.props.tag}`).then(response => response.json()).catch(error => {
+    fetch(`${endPoint}/articles/tag/${this.props.tag}`).then(response => response.json()).catch(error => {
       this.setState({error});
     }).then(data => {
       this.setState({articles: data});

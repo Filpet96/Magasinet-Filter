@@ -60,6 +60,7 @@ class Question extends Component {
         this.setState({
           quizCompleted: true
         });
+          this.props.quizCompleted();
           this.scrollToElement();
       }
 
