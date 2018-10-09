@@ -5,7 +5,6 @@ import "./App";
 import Home from "./Pages/Home";
 import Article from "./Pages/Article";
 import Quiz from "./Pages/Quiz/index.jsx";
-import BottomMenu from "./Components/BottomMenu";
 
 class App extends Component {
   render() {
@@ -25,7 +24,6 @@ class App extends Component {
             <Quiz path="/quiz" />
           </Router>
         </main>
-        <BottomMenu />
       </div>
     );
   }

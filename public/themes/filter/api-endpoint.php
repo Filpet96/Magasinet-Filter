@@ -18,6 +18,9 @@ function getAllArticles()
     foreach ($articles as $article) {
         $customFields = get_fields($article);
         $tags = get_the_terms($article, 'tag');
+        if ($customFields['body']) {
+          $article->read_time = getReadTime($customFields['body']);
+        }
         foreach ($customFields as $field => $value) {
             $article->$field = $value;
         }
@@ -147,4 +150,16 @@ function getArticlesByTag($data)
         }
     }
     return $articlesByTag;
+}
+
+
+// Get Estimated Readtime Of Article
+
+function getReadTime($article) {
+  $word = str_word_count(strip_tags($article));
+  $m = floor($word / 200);
+  // $s = floor($word % 200 / (200 / 60));
+  $est = $m;
+
+  return $est;
 }

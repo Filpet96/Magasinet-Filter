@@ -4,6 +4,8 @@ import endPoint from "../../Data/api";
 import ArticlePreview from "../../Components/ArticlePreview";
 import Header from "../../Components/Header";
 import ArticlePreviewSmall from "../../Components/ArticlePreviewSmall";
+import BottomMenu from "../../Components/BottomMenu";
+
 
 import "./index";
 
@@ -52,6 +54,7 @@ class Home extends Component {
             </h2>
           </section>
         </section>
+        <BottomMenu />
       </div>
     );
   }
