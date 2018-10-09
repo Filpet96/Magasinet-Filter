@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import endPoint from "../../Data/api";
-import { Link } from "@reach/router";
 import Helmet from "react-helmet";
 
 import "./index";
@@ -15,7 +14,7 @@ class Article extends Component {
   };
 
   componentDidMount() {
-    fetch(`${endPoint}/article/` + `10`)
+    fetch(`${endPoint}/article/10`)
       .then(response => response.json())
       .catch(error => {
         this.setState({
@@ -105,8 +104,8 @@ class Article extends Component {
               />
               <hr />
               <p
-                style={fontSizeP}
                 className="article_body"
+                style={fontSizeP}
                 dangerouslySetInnerHTML={{ __html: post.body }}
               />
             </article>

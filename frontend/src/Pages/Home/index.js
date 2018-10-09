@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import endPoint from "../../Data/api";
 import ArticlePreview from "../../Components/ArticlePreview";
 import Header from "../../Components/Header";
-import ArticlePreviewSmall from "../../Components/ArticlePreviewSmall";
+import ArticlePreviewSlider from "../../Components/ArticlePreviewSlider";
 
 import "./index";
 
@@ -44,12 +44,14 @@ class Home extends Component {
             featured_image={article.featured_image}
           />
           <section>
-            <h2 className="sub_headline">Utvalt för dig</h2>
-            <ArticlePreviewSmall />
-            <h2 className="sub_headline">Från nya numret</h2>
-            <h2 className="sub_headline">
-              Palmemordet: Den osannolika mördaren
-            </h2>
+            <ArticlePreviewSlider
+              tag="filterbubblan"
+              headerText="Utvalt för dig"
+            />
+            <ArticlePreviewSlider
+              tag="tunga-granskningar"
+              headerText="Tunga granskningar"
+            />
           </section>
         </section>
       </div>
