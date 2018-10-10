@@ -52,7 +52,7 @@ class ProgressBar extends React.Component {
     const value = parseInt(Math.random() * 100, 10);
 
     this.setState({
-      percent: { pctScrolled }
+      percent: value
     });
   }
 
@@ -65,7 +65,7 @@ class ProgressBar extends React.Component {
           strokeColor="#e1ab99"
           trailColor="#fff"
         />
-        <div>
+      <div>
           <button onClick={this.changeProgressState}>Change State</button>
         </div>
       </div>
