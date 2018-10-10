@@ -25,10 +25,6 @@
         line-height: normal;
         font-size: 1.3em;
         font-family: "Harriet Display";
-
-        &.ingangsord {
-          // font-size: 1em;
-        }
       }
     }
     img {
@@ -75,5 +71,8 @@
   .article_lead p {
     color: #c3c3c3;
   }
-
+}
+.daymode {
+  transition: background-color 0.4s ease-out;
+  background-color: $white;
 }

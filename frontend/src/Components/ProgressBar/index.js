@@ -8,15 +8,11 @@ class ProgressBar extends React.Component {
     this.state = {
       percent: 0
     };
+
+    this.changeProgressState = this.changeProgressState.bind(this);
   }
 
-  changeProgressState() {
-    this.setState({
-      percent: {}
-    });
-  }
-
-  render() {
+  componentDidMount() {
     function getDocHeight() {
       const d = document;
       return Math.max(
@@ -50,7 +46,17 @@ class ProgressBar extends React.Component {
       },
       false
     );
+  } //end didmount
+  changeProgressState() {
+    //random value that goes into state. How to fetch data from percentScrolled?
+    const value = parseInt(Math.random() * 100, 10);
 
+    this.setState({
+      percent: { pctScrolled }
+    });
+  }
+
+  render() {
     return (
       <div>
         <Line
@@ -59,7 +65,9 @@ class ProgressBar extends React.Component {
           strokeColor="#e1ab99"
           trailColor="#fff"
         />
-        <button onClick={this.changeProgressState}>Change State</button>
+        <div>
+          <button onClick={this.changeProgressState}>Change State</button>
+        </div>
       </div>
     );
   }

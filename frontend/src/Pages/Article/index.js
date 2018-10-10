@@ -50,7 +50,7 @@ class Article extends Component {
     this.setState({ className: "nightmode" });
 
     if (this.state.className === "nightmode") {
-      this.setState({ className: false });
+      this.setState({ className: "daymode" });
     }
   };
 
@@ -72,7 +72,6 @@ class Article extends Component {
           incFontSize={this.incFontSize}
           decFontSize={this.decFontSize}
           nightmode={this.nightmode}
-          pctScrolled={this.pctScrolled}
         />
         {post && (
           <div className={this.state.className}>
