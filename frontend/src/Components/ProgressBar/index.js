@@ -53,7 +53,7 @@ class ProgressBar extends React.Component {
       <div className="progress_bar_container">
         <Line
           percent={this.state.percent}
-          strokeWidth="1.5"
+          strokeWidth="1"
           strokeColor="#e1ab99"
           trailColor="#151515"
         />

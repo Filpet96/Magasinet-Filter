@@ -83,7 +83,6 @@ add_action('rest_api_init', function () {
 });
 
 // Get Article By Id
-
 add_action('rest_api_init', function () {
     register_rest_route('filter', '/article/(?P<id>\d+)', array(
     'methods' => 'GET',
@@ -105,7 +104,6 @@ function getArticleById($data)
 }
 
 // Get Quiz By Id
-
 add_action('rest_api_init', function () {
     register_rest_route('filter', '/quiz/(?P<id>\d+)', array(
     'methods' => 'GET',
@@ -128,7 +126,6 @@ function getQuizById($data)
 
 
 // Get Articles By Tag
-
 add_action('rest_api_init', function () {
     register_rest_route('filter', '/articles/tag/(?P<tag>\S+)/', array(
     'methods' => 'GET',
@@ -152,9 +149,7 @@ function getArticlesByTag($data)
     return $articlesByTag;
 }
 
-
 // Get Estimated Readtime Of Article
-
 function getReadTime($article) {
   $word = str_word_count(strip_tags($article));
   $m = floor($word / 200);

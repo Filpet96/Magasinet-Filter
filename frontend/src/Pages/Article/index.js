@@ -10,7 +10,7 @@ class Article extends Component {
   state = {
     error: false,
     post: false,
-    fontSizeClass: ''
+    fontSizeClass: ""
   };
 
   componentDidMount() {
@@ -28,11 +28,10 @@ class Article extends Component {
       });
   }
 
-
   fontSizeHandler = (data, value) => {
-      this.setState({
-        fontSizeClass: value
-      });
+    this.setState({
+      fontSizeClass: value
+    });
   };
 
   /*{ NIGHTMODE }*/
@@ -63,9 +62,11 @@ class Article extends Component {
               src={post.featured_image}
               alt={post.post_title}
             />
-          <article className={this.state.fontSizeClass}>
+            <article className={this.state.fontSizeClass}>
               <h1 className="large">{post.headline}</h1>
-              <p className="article_readtime">Reportage • {post.read_time} min lästid</p>
+              <p className="article_readtime">
+                Reportage • {post.read_time} min lästid
+              </p>
               <p className="article_contributors">
                 <em>Text: </em>
                 <span className="article_contributors_item uppercase bold underline">
