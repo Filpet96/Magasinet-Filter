@@ -43,6 +43,7 @@ class Home extends Component {
             headline={article.headline}
             lead={article.lead}
             featured_image={article.featured_image}
+            read_time={article.read_time}
           />
           <section>
             <ArticlePreviewSlider

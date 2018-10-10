@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 
 import "./index";
 import ArticalHeader from "../../Components/ArticalHeader";
+import BottomMenu from "../../Components/BottomMenu";
 
 class Article extends Component {
   state = {
@@ -49,7 +50,7 @@ class Article extends Component {
     this.setState({ className: "nightmode" });
 
     if (this.state.className === "nightmode") {
-      this.setState({ className: "" });
+      this.setState({ className: false });
     }
   };
 
@@ -71,6 +72,7 @@ class Article extends Component {
           incFontSize={this.incFontSize}
           decFontSize={this.decFontSize}
           nightmode={this.nightmode}
+          pctScrolled={this.pctScrolled}
         />
         {post && (
           <div className={this.state.className}>
@@ -81,7 +83,9 @@ class Article extends Component {
             />
             <article>
               <h1 style={fontSizeH1}>{post.headline}</h1>
-              <p className="article_readtime">Reportage • 19 min lästid</p>
+              <p className="article_readtime">
+                Reportage • {post.read_time} min lästid
+              </p>
               <p className="article_contributors">
                 <em>Text: </em>
                 <span className="article_contributors_item uppercase bold underline">
@@ -112,6 +116,7 @@ class Article extends Component {
           </div>
         )}
         {/* end post*/}
+        <BottomMenu />
       </div>
     );
   }
