@@ -21,7 +21,7 @@ class ArticalHeader extends React.Component {
       displayCircles: false,
       fillLetters: false,
       fillBookmark: false,
-      fillCircle: false,
+      fillCircle: [false,true,false],
       fillMoon: false
     };
 
@@ -42,10 +42,6 @@ class ArticalHeader extends React.Component {
     });
   }
 
-  toogleFontSize = () => {
-    this.props.decFontSize();
-    this.setState({ fillCircle: !this.state.fillCircle });
-  };
 
   toggleNightMode = () => {
     this.props.nightmode();
@@ -56,7 +52,27 @@ class ArticalHeader extends React.Component {
     this.setState({ fillBookmark: !this.state.fillBookmark });
   };
 
+  fontSizeHandler = (data, i) => {
+    this.props.FontSize(this, data);
+    this.setState({ fillCircle: [false,false,false] });
+    this.setState((prev) => {
+      prev.fillCircle[i] = true;
+    });
+  };
+
   render() {
+    let circles = [];
+    for (var i = 0; i < 3; i++) {
+      circles.push(
+        <img
+          key={i}
+          className="dropdown_svg"
+          onClick={this.fontSizeHandler.bind(this, 'size_' + i, i)}
+          src={this.state.fillCircle[i] ? circle_fill : circle}
+          alt=""
+        />
+      );
+    }
     return (
       <div className="article_menu_bar">
         <div className="menu_items">
@@ -72,30 +88,12 @@ class ArticalHeader extends React.Component {
               alt="Change font size"
             />
           </span>
-          {this.state.displayCircles ? (
-            <div className="dropdown">
+            <div className={'dropdown ' + (this.state.displayCircles ? 'active' : '')}>
               <p>Ändra textstorlek</p>
               <div>
-                <img
-                  className="dropdown_svg"
-                  onClick={this.props.decFontSize}
-                  src={this.state.fillCircle ? circle_fill : circle}
-                  alt=""
-                />
-                <img
-                  className="dropdown_svg"
-                  src={this.state.fillCircle ? circle_fill : circle}
-                  alt=""
-                />
-                <img
-                  className="dropdown_svg"
-                  onClick={this.props.incFontSize}
-                  src={this.state.fillCircle ? circle_fill : circle}
-                  alt=""
-                />
+                {circles}
               </div>
             </div>
-          ) : null}
 
           <span>
             <img

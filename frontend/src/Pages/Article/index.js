@@ -10,8 +10,7 @@ class Article extends Component {
   state = {
     error: false,
     post: false,
-    fontSizeP: 19,
-    fontSizeH1: 45
+    fontSizeClass: ''
   };
 
   componentDidMount() {
@@ -29,20 +28,11 @@ class Article extends Component {
       });
   }
 
-  /*{ FONT SIZE }*/
-  incFontSize = () => {
-    console.log(this.state.fontSizeP);
-    this.setState({
-      fontSizeP: this.state.fontSizeP + 4,
-      fontSizeH1: this.state.fontSizeH1 + 4
-    });
-  };
-  decFontSize = () => {
-    console.log(this.state.fontSizeP);
-    this.setState({
-      fontSizeP: this.state.fontSizeP - 4,
-      fontSizeH1: this.state.fontSizeH1 - 4
-    });
+
+  fontSizeHandler = (data, value) => {
+      this.setState({
+        fontSizeClass: value
+      });
   };
 
   /*{ NIGHTMODE }*/
@@ -56,12 +46,6 @@ class Article extends Component {
 
   render() {
     const { post, error } = this.state;
-    const fontSizeP = {
-      fontSize: `${this.state.fontSizeP}px`
-    };
-    const fontSizeH1 = {
-      fontSize: `${this.state.fontSizeH1}px`
-    };
 
     return (
       <div className="articleContainer">
@@ -69,8 +53,7 @@ class Article extends Component {
           <title>Filter - Artikel</title>
         </Helmet>
         <ArticalHeader
-          incFontSize={this.incFontSize}
-          decFontSize={this.decFontSize}
+          FontSize={this.fontSizeHandler}
           nightmode={this.nightmode}
         />
         {post && (
@@ -80,11 +63,9 @@ class Article extends Component {
               src={post.featured_image}
               alt={post.post_title}
             />
-            <article>
-              <h1 style={fontSizeH1}>{post.headline}</h1>
-              <p className="article_readtime">
-                Reportage • {post.read_time} min lästid
-              </p>
+          <article className={this.state.fontSizeClass}>
+              <h1 className="large">{post.headline}</h1>
+              <p className="article_readtime">Reportage • {post.read_time} min lästid</p>
               <p className="article_contributors">
                 <em>Text: </em>
                 <span className="article_contributors_item uppercase bold underline">
@@ -108,7 +89,6 @@ class Article extends Component {
               <hr />
               <p
                 className="article_body"
-                style={fontSizeP}
                 dangerouslySetInnerHTML={{ __html: post.body }}
               />
             </article>
