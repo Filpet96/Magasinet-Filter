@@ -30,6 +30,11 @@ h1 {
   line-height: 43px;
   font-weight: normal;
   letter-spacing: 1%;
+
+  &.large {
+    font-size: 43px;
+    line-height: 50px;
+  }
 }
 
 h2,
