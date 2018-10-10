@@ -45,7 +45,7 @@ class Article extends Component {
   };
 
   render() {
-    const { post, error } = this.state;
+    const { post } = this.state;
 
     return (
       <div className="articleContainer">
