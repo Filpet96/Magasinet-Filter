@@ -1,6 +1,7 @@
 import React from "react";
 import "./index";
 import { Link } from "@reach/router";
+import ProgressBar from "../ProgressBar";
 
 import back_icon from "../../Icons/back.svg";
 import aa_icon from "../../Icons/Aa.svg";
@@ -111,6 +112,7 @@ class ArticalHeader extends React.Component {
             />
           </span>
         </div>
+        <ProgressBar />
       </div>
     );
   }

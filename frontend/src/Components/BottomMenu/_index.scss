@@ -5,6 +5,7 @@
   width: 100%;
   background: $black;
   overflow: hidden;
+  transition: bottom 0.3s;
   .menu_items {
     display: flex;
     justify-content: space-evenly;

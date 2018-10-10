@@ -5,7 +5,7 @@ import { Link } from "@reach/router";
 
 class ArticlePreview extends Component {
   render() {
-    const { headline, featured_image, lead, post_title } = this.props;
+    const { headline, featured_image, lead, post_title, read_time } = this.props;
 
     return (
       <div className="article-preview-container">
@@ -15,7 +15,7 @@ class ArticlePreview extends Component {
         </div>
         <section>
           <h1>{headline}</h1>
-          <p className="article-preview-category">Reportage • 19 min lästid</p>
+          <p className="article-preview-category">Reportage • {read_time} min lästid</p>
           <p dangerouslySetInnerHTML={{ __html: lead }} />
 
           <Link to="/article">

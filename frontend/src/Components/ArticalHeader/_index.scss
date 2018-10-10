@@ -48,24 +48,3 @@
     }
   }
 }
-
-// .grow-from-center-enter {
-//   transform: scale(0);
-//   transform-origin: 50% 0;
-//
-//   &.grow-from-center-enter-active {
-//
-//   transition: transform $default-transition-time $default-cubic-in;
-//     transform: scale(1);
-//   }
-// }
-//
-// .grow-from-center-leave {
-//   transform: scale(1);
-//   transform-origin: 50% 0;
-//
-//   &.grow-from-center-leave-active {
-//   transition: transform $default-transition-time $default-cubic-in;
-//     transform: scale(0);
-//   }
-// }
