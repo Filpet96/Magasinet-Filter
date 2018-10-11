@@ -17,11 +17,12 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => this.setState({
         fading: true
-      }), 200);
+      }), 2200);
     setTimeout(() => this.setState({
         loading: false
-      }), 500);
+      }), 2500);
   }
+
 
   render() {
     return (

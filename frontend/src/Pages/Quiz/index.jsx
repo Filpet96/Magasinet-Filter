@@ -14,7 +14,7 @@ class Quiz extends Component {
     quiz: false,
     politicians: false,
     quizQuestions: false,
-    question: 9,
+    question: 6,
     error: false,
     quizCompleted: false,
     answer: 0
