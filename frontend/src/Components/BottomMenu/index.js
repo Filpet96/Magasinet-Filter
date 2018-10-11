@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./index";
 import { Link } from "@reach/router";
 
@@ -7,11 +7,8 @@ import menu_icon from "../../Icons/menu.svg";
 import search_icon from "../../Icons/search.svg";
 import favorites_icon from "../../Icons/favorites.svg";
 
-class BottomMenu extends Component{
-
-
+class BottomMenu extends Component {
   render() {
-
     return (
       <div className="bottom_menu_bar">
         <div className="menu_items">
@@ -38,6 +35,5 @@ class BottomMenu extends Component{
     );
   }
 }
-
 
 export default BottomMenu;
